@@ -3,7 +3,7 @@ import Sidebar from './components/Sidebar';
 
 function App() {
   return (
-    <div className="min-h-screen flex dark:bg-gray-900 dark:text-white transition-all ease-in-out duration-700">
+    <div className="flex bg-main-light dark:bg-main-dark min-h-screen text-deep-dark dark:text-white transition-all duration-700 ease-in-out">
       <Sidebar />
       <InvoicePanel />
     </div>

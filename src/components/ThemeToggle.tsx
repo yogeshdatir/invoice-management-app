@@ -14,7 +14,7 @@ export default function ThemeToggle({
     <button
       onClick={toggle}
       aria-label="Toggle theme"
-      className={`relative h-max rounded-full p-2 transition-colors hover:bg-gray-200 dark:hover:bg-gray-700 cursor-pointer dark:text-gray-200 overflow-hidden ${className}`}
+      className={`relative h-max rounded-full p-2 transition-colors hover:bg-gray-700 cursor-pointer text-gray-200 overflow-hidden ${className}`}
       {...props}
     >
       <Sun

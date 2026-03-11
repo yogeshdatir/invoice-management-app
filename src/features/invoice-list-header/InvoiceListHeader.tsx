@@ -1,12 +1,15 @@
-import { Plus } from 'lucide-react';
+import Plus from '../../assets/icon-plus.svg?react';
 import InvoiceListFilter from './InvoiceListFilter';
+type Props = {
+  invoiceCount: number;
+};
 
-const InvoiceListHeader = () => {
+const InvoiceListHeader = ({ invoiceCount }: Props) => {
   return (
     <div className="flex justify-between items-center">
       <div>
-        <h1>Invoices</h1>
-        <p>There are 7 total invoices</p>
+        <h1 className="font-bold text-3xl">Invoices</h1>
+        <p className="text-xs">There are {invoiceCount} total invoices</p>
       </div>
       <div className="flex gap-10">
         <InvoiceListFilter />
@@ -14,7 +17,7 @@ const InvoiceListHeader = () => {
           <div className="flex justify-center items-center bg-white p-2 rounded-full w-8 h-8 text-primary-button">
             <Plus />
           </div>
-          <span className="font-bold">New Invoice</span>
+          <span className="font-bold text-white">New Invoice</span>
         </button>
       </div>
     </div>

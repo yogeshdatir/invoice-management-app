@@ -1,11 +1,9 @@
-import { http, HttpResponse } from 'msw';
+import { delay, http, HttpResponse } from 'msw';
+import data from './data.json';
 
 export const handlers = [
-  http.get('https://api.example.com/user', () => {
-    return HttpResponse.json({
-      id: 'abc-123',
-      firstName: 'John',
-      lastName: 'Maverick',
-    });
+  http.get('/invoices', async () => {
+    await delay(2000);
+    return HttpResponse.json(data);
   }),
 ];
