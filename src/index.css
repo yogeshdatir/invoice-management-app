@@ -3,5 +3,23 @@
 @custom-variant dark (&:where(.dark, .dark *));
 
 @theme {
+  --color-bg-main-dark: #141625;
+  --color-bg-panel-dark: #1e2139;
+  --color-bg-accent-dark: #252945;
+  --color-bg-deep-dark: #0c0e16;
+
+  --color-bg-main-light: #f8f8fb;
+  --color-bg-panel-light: #ffffff;
+  --color-bg-accent-light: #dfe3fa;
+  --color-bg-deep-light: #373b53;
+
+  --color-primary-button: #7c5dfa;
+  --color-primary-button-hover: #9277ff;
+
+  --color-secondary-button-light: #f9fafe;
+  --color-secondary-button-hover-light: #dfe3fa;
+  --color-secondary-button-dark: #252945;
+  --color-secondary-button-hover-dark: #ffffff;
+
   --ease-spring: cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
