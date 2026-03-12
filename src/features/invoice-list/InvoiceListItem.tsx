@@ -13,11 +13,11 @@ const InvoiceListItem = ({ invoice }: Props) => {
   });
   return (
     <div className="items-center gap-x-2 grid grid-cols-[1fr_1.5fr_2fr_1fr_1fr_0.25fr] bg-white dark:bg-panel-dark shadow-[0_10px_10px_-10px_#48549F1A] py-4 pr-2 pl-8 rounded-lg transition-all duration-700">
-      <span className="font-bold text-xs uppercase">#{invoice.id}</span>
-      <span className="font-semibold text-secondary-text dark:text-secondary-text-dark text-xs">
+      <span className="font-bold text-base uppercase">#{invoice.id}</span>
+      <span className="text-secondary-text dark:text-secondary-text-dark text-base">
         Due {invoice.paymentDue}
       </span>
-      <span className="pl-2 font-semibold text-secondary-text dark:text-secondary-text-dark text-xs">
+      <span className="pl-2 text-secondary-text dark:text-secondary-text-dark text-base">
         {invoice.clientName}
       </span>
       <span className="pr-8 font-bold text-base text-right">

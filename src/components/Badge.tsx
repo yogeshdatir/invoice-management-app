@@ -58,13 +58,13 @@ const Badge = ({ status }: Props) => {
   } = getStatusColor(status);
   return (
     <div
-      className={`flex gap-2 justify-center items-center ${statusBgColor} ${statusBgColorDark} px-4.5 py-3 rounded-lg`}
+      className={`flex gap-2 justify-center items-center min-w-28 ${statusBgColor} ${statusBgColorDark} px-4.5 py-3 rounded-lg`}
     >
       <div
-        className={`rounded-full w-2 h-2 ${statusDotBgColor} -mb-0.5 ${statusDotBgColorDark}`}
+        className={`rounded-full w-2 h-2 ${statusDotBgColor} mb-0.5 ${statusDotBgColorDark}`}
       />
       <span
-        className={`${statusTextColor} ${statusTextColorDark} text-xs font-bold capitalize`}
+        className={`${statusTextColor} ${statusTextColorDark} text-base font-bold capitalize`}
       >
         {status}
       </span>

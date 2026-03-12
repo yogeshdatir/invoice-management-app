@@ -3,6 +3,8 @@
 @custom-variant dark (&:where(.dark, .dark *));
 
 @theme {
+  --default-font-family: 'League Spartan', sans-serif;
+
   --color-main-dark: #141625;
   --color-panel-dark: #1e2139;
   --color-accent-dark: #252945;

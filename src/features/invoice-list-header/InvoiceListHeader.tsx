@@ -9,7 +9,13 @@ const InvoiceListHeader = ({ invoiceCount }: Props) => {
     <div className="flex justify-between items-center">
       <div>
         <h1 className="font-bold text-3xl">Invoices</h1>
-        <p className="text-xs">There are {invoiceCount} total invoices</p>
+        <p className="text-base">
+          {invoiceCount > 0
+            ? invoiceCount > 1
+              ? `There are ${invoiceCount} total invoices`
+              : `There is ${invoiceCount} invoice`
+            : `No invoices`}
+        </p>
       </div>
       <div className="flex gap-10">
         <InvoiceListFilter />
