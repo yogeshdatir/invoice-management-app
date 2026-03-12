@@ -4,12 +4,12 @@ import ThemeToggle from './ThemeToggle';
 
 const Sidebar = () => {
   return (
-    <div className="flex flex-col items-center justify-between bg-slate-800 rounded-r-[1.25rem]">
+    <div className="fixed flex flex-col justify-between items-center bg-slate-800 rounded-r-[1.25rem] h-screen">
       <Logo />
-      <div className="flex flex-col items-center w-full gap-6 pb-6">
+      <div className="flex flex-col items-center gap-6 pb-6 w-full">
         <ThemeToggle />
-        <hr className=" w-full h-1 border-gray-200" />
-        <UserRoundCog className="text-white " />
+        <hr className="border-gray-200 w-full h-1" />
+        <UserRoundCog className="text-white" />
       </div>
     </div>
   );

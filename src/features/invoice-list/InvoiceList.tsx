@@ -4,7 +4,7 @@ import InvoiceListItem from './InvoiceListItem';
 import type { SerializedError } from '@reduxjs/toolkit';
 
 type Props = {
-  invoices: Invoice[];
+  invoices: Invoice[] | undefined;
   error: FetchBaseQueryError | SerializedError | undefined;
   isLoading: boolean;
 };
@@ -17,8 +17,8 @@ const InvoiceList = ({ invoices, error, isLoading }: Props) => {
     return <div>There is an error...</div>;
   }
   return (
-    <ul>
-      {invoices.map((invoice: Invoice) => {
+    <ul className="flex flex-col gap-4">
+      {invoices?.map((invoice: Invoice) => {
         return <InvoiceListItem invoice={invoice} />;
       })}
     </ul>

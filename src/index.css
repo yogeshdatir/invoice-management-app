@@ -21,5 +21,12 @@
   --color-secondary-button-dark: #252945;
   --color-secondary-button-hover-dark: #ffffff;
 
+  --color-paid-status: #33d69f;
+  --color-pending-status: #ff8f00;
+  --color-draft-status: #373b53;
+
+  --color-secondary-text: #7e88c3;
+  --color-secondary-text-dark: #dfe3fa;
+
   --ease-spring: cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }

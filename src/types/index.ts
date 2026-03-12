@@ -6,7 +6,7 @@ export interface Invoice {
   paymentTerms: number;
   clientName: string;
   clientEmail: string;
-  status: string;
+  status: Status;
   senderAddress: SenderAddress;
   clientAddress: ClientAddress;
   items: Item[];
@@ -33,3 +33,11 @@ export interface Item {
   price: number;
   total: number;
 }
+
+export const statusValues = Object.freeze({
+  DRAFT: 'Draft',
+  PENDING: 'Pending',
+  PAID: 'Paid',
+} as const);
+
+export type Status = (typeof statusValues)[keyof typeof statusValues];

@@ -1,5 +1,5 @@
 import { delay, http, HttpResponse } from 'msw';
-import data from './data.json';
+import data from './Invoice.json';
 
 export const handlers = [
   http.get('/invoices', async () => {
