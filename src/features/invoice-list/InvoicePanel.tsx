@@ -2,6 +2,7 @@ import InvoiceList from './InvoiceList';
 import InvoiceListHeader from '../invoice-list-header/InvoiceListHeader';
 import { useGetInvoicesQuery } from '../../services/invoiceApi';
 import { useState } from 'react';
+import type { Invoice, Status } from '@/types';
 
 export type FilterProps = {
   checked: Record<string, boolean>;
@@ -22,11 +23,18 @@ const InvoicePanel = () => {
   };
 
   // Using a query hook automatically fetches data and returns query values
-  const { data, error, isLoading } = useGetInvoicesQuery({
-    filters: {
-      status: checked,
-    },
-  });
+  const { data, error, isLoading } = useGetInvoicesQuery();
+
+  const selectedStatuses: Status[] = Object.entries(checked)
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
+    .filter(([_, value]) => value)
+    .map(([key]) => key as Status);
+
+  const filteredInvoices = selectedStatuses.length
+    ? data?.filter((invoice: Invoice) =>
+        selectedStatuses.includes(invoice.status),
+      )
+    : data;
 
   return (
     <div className="flex justify-center pt-18 w-full">
@@ -35,7 +43,11 @@ const InvoicePanel = () => {
           invoiceCount={data?.length ?? 0}
           filterProps={filterProps}
         />
-        <InvoiceList invoices={data} error={error} isLoading={isLoading} />
+        <InvoiceList
+          invoices={filteredInvoices}
+          error={error}
+          isLoading={isLoading}
+        />
       </div>
     </div>
   );
