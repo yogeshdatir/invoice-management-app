@@ -1,4 +1,4 @@
-import InvoicePanel from './components/InvoicePanel';
+import InvoicePanel from './features/invoice-list/InvoicePanel';
 import Sidebar from './components/Sidebar';
 
 function App() {

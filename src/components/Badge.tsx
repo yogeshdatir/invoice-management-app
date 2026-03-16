@@ -1,7 +1,6 @@
 import { statusValues, type Status } from '../types';
 
 const getStatusColor = (status: Status) => {
-  console.log(status);
   let statusColors: {
     statusTextColor: string;
     statusBgColor: string;

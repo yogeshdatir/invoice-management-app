@@ -6,8 +6,23 @@ export const invoiceApi = createApi({
   reducerPath: 'invoiceApi',
   baseQuery: fetchBaseQuery({ baseUrl: '/' }),
   endpoints: (builder) => ({
-    getInvoices: builder.query<Invoice[], void>({
-      query: () => `invoices`,
+    getInvoices: builder.query<
+      Invoice[],
+      { filters: { status: Record<string, boolean> } }
+    >({
+      query: ({ filters }) => {
+        const selectedStatuses = Object.entries(filters.status)
+          // eslint-disable-next-line @typescript-eslint/no-unused-vars
+          .filter(([_, value]) => value)
+          .map(([key]) => key);
+
+        return {
+          url: `invoices`,
+          params: {
+            status: selectedStatuses,
+          },
+        };
+      },
     }),
   }),
 });
