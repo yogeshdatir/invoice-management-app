@@ -37,7 +37,7 @@ const InvoiceList = ({ invoices, error, isLoading }: Props) => {
   return (
     <ul className="flex flex-col gap-4">
       {invoices?.map((invoice: Invoice) => {
-        return <InvoiceListItem invoice={invoice} />;
+        return <InvoiceListItem key={invoice.id} invoice={invoice} />;
       })}
     </ul>
   );
